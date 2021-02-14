@@ -36,6 +36,7 @@ TK
  * "an intelligent agent (IA) refers to an autonomous entity which acts, directing its activity towards achieving goals (i.e. it is an agent), upon an environment using observation through sensors and consequent actuators"
  * https://en.wikipedia.org/wiki/Intelligent_agent
 
+software entities that carry out some set of operations on behalf of a user or another program with some degree of independence or autonomy, and in so doing, employ some knowledge or representation of the user's goals or desires.
 === P.A.G.E
 TK
 

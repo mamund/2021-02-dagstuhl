@@ -1,0 +1,18 @@
+{
+  "$schema": "",
+  "alps": {
+    "descriptor": [
+      {
+        "id": "goCollection",
+        "ref": "https://tools.ietf.org/html/rfc6573",
+        "type": "safe"
+      }
+    ]
+  },
+  "link": [
+    {
+      "rel": "parent",
+      "href": "semantic..json"
+    }
+  ]
+}

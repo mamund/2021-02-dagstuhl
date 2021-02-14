@@ -1,0 +1,18 @@
+{
+  "$schema": "",
+  "alps": {
+    "descriptor": [
+      {
+        "id": "goCurrent",
+        "ref": "http://amundsen.com/media-types/maze/format/#link-relations",
+        "type": "safe"
+      }
+    ]
+  },
+  "link": [
+    {
+      "rel": "parent",
+      "href": "semantic..json"
+    }
+  ]
+}

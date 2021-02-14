@@ -1,0 +1,18 @@
+{
+  "$schema": "",
+  "alps": {
+    "descriptor": [
+      {
+        "id": "goEast",
+        "ref": "http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values",
+        "type": "safe"
+      }
+    ]
+  },
+  "link": [
+    {
+      "rel": "parent",
+      "href": "semantic..json"
+    }
+  ]
+}

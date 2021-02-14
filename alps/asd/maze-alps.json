@@ -1,0 +1,76 @@
+{
+  "alps" : {
+    "version" :"1.0",
+    "doc" : {"contentType" : "text/plain", "value" : "ALPS Profile for Maze Exploration"},
+    
+    "descriptor" : 
+    [
+      {"id" : "href", "type" : "semantic", "def" : "https://schema.org/url"},
+      {"id" : "rel", "type" : "semantic", "def" : "https://schema.org/linkRelationship"},
+      {"id" : "title", "type" : "semantic", "def" : "https://schema.org/title"},
+
+      {"id" : "goCollection", "type" : "safe", "rt" : "#mazeCollection", "rel" : "collection", "def" : "https://tools.ietf.org/html/rfc6573"},
+      {"id" : "goItem", "type" : "safe", "rt" : "#mazeItem", "rel" : "item maze", "def" : "https://tools.ietf.org/html/rfc6573"},
+      {"id" : "goStart", "type" : "safe", "rt" : "#mazeCell", "rel" : "start", "def" : "http://amundsen.com/media-types/maze/format/#link-relations"},
+      {"id" : "goCurrent", "type" : "safe", "rt" : "#mazeCell", "rel" : "current", "def" : "http://amundsen.com/media-types/maze/format/#link-relations"},
+      {"id" : "goNorth", "type" : "safe", "rt" : "#mazeCell", "rel" : "north", "def" : "http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values"},
+      {"id" : "goSouth", "type" : "safe", "rt" : "#mazeCell", "rel" : "south", "def" : "http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values"},
+      {"id" : "goEast", "type" : "safe", "rt" : "#mazeCell", "rel" : "east", "def" : "http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values"},
+      {"id" : "goWest", "type" : "safe", "rt" : "#mazeCell", "rel" : "west", "def" : "http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values"},
+      {"id" : "goExit", "type" : "safe", "rt" : "#mazeExit", "rel" : "exit", "def" : "http://amundsen.com/media-types/maze/format/#link-relations"},
+    
+      {"id" : "mazeCollection", "type" : "semantic", "rel" : "collection",
+        "descriptor" : 
+        [
+          {"href" : "#href"},
+          {"href" : "#title"},
+          {"href" : "#rel"},
+          {"href" : "#goItem"},
+          {"href" : "#goCollection"}  
+        ]
+      },
+    
+      {"id" : "mazeItem", "type" : "semantic", "rel" : "item maze",
+        "descriptor" : 
+        [
+          {"href" : "#href"},
+          {"href" : "#title"},
+          {"href" : "#rel"},
+          {"href" : "#goStart"},
+          {"href" : "#goCollection"}
+        ]
+      },
+    
+      {"id" : "mazeCell", "type" : "semantic", "rel" : "cell start exit current north south east west", 
+        "descriptor" : 
+        [
+          {"href" : "#href"},
+          {"href" : "#title"},
+          {"href" : "#rel"},
+          {"href" : "#goExit"},
+          {"href" : "#goStart"},
+          {"href" : "#goNorth"},
+          {"href" : "#goSouth"},
+          {"href" : "#goEast"},
+          {"href" : "#goWest"},
+          {"href" : "#goCurrent"},
+          {"href" : "#goItem"},
+          {"href" : "#goCollection"}
+        ]
+      },
+      
+      {"id" : "mazeExit", "type" : "semantic", "rel" : "cell exit", 
+        "descriptor" : 
+        [
+          {"href" : "#href"},
+          {"href" : "#title"},
+          {"href" : "#rel"},
+          {"href" : "#goStart"},
+          {"href" : "#goItem"},
+          {"href" : "#goCollection"}
+        ]
+      }
+            
+    ]
+  }
+}

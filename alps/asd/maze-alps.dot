@@ -1,0 +1,28 @@
+digraph application_state_diagram {
+  graph [
+    labelloc="b";
+    fontname="Helvetica"
+    label="";
+    URL="index.html" target="_parent"
+  ];
+  node [shape = box, style = "bold,filled"];
+
+    mazeCollection [style=solid, margin=0.02, label=<<table cellspacing="0" cellpadding="5" cellborder="1" border="0"><tr><td bgcolor="#dddddd">mazeCollection<br />(href)<br />(title)<br />(rel)<br /></td></tr></table>>,shape=box URL="docs/semantic.mazeCollection.html" target="_parent"]
+    mazeItem [style=solid, margin=0.02, label=<<table cellspacing="0" cellpadding="5" cellborder="1" border="0"><tr><td bgcolor="#dddddd">mazeItem<br />(href)<br />(title)<br />(rel)<br /></td></tr></table>>,shape=box URL="docs/semantic.mazeItem.html" target="_parent"]
+    mazeCell [style=solid, margin=0.02, label=<<table cellspacing="0" cellpadding="5" cellborder="1" border="0"><tr><td bgcolor="#dddddd">mazeCell<br />(href)<br />(title)<br />(rel)<br /></td></tr></table>>,shape=box URL="docs/semantic.mazeCell.html" target="_parent"]
+    mazeExit [style=solid, margin=0.02, label=<<table cellspacing="0" cellpadding="5" cellborder="1" border="0"><tr><td bgcolor="#dddddd">mazeExit<br />(href)<br />(title)<br />(rel)<br /></td></tr></table>>,shape=box URL="docs/semantic.mazeExit.html" target="_parent"]
+
+    mazeCollection -> mazeItem [label = "goItem, item maze (safe)" URL="docs/safe.goItem.html" target="_parent" fontsize=13];
+    mazeCollection -> mazeCollection [label = "goCollection, collection (safe)" URL="docs/safe.goCollection.html" target="_parent" fontsize=13];
+    mazeItem -> mazeCell [label = "goStart, start (safe)" URL="docs/safe.goStart.html" target="_parent" fontsize=13];
+    mazeItem -> mazeCollection [label = "goCollection, collection (safe)" URL="docs/safe.goCollection.html" target="_parent" fontsize=13];
+    mazeCell -> mazeExit [label = "goExit, exit (safe)" URL="docs/safe.goExit.html" target="_parent" fontsize=13];
+    mazeCell -> mazeCell [label=<<table  border="0"><tr><td align="left" href="docs/safe.goStart.html">goStart (safe)</td></tr><tr><td align="left" href="docs/safe.goNorth.html">goNorth (safe)</td></tr><tr><td align="left" href="docs/safe.goSouth.html">goSouth (safe)</td></tr><tr><td align="left" href="docs/safe.goEast.html">goEast (safe)</td></tr><tr><td align="left" href="docs/safe.goWest.html">goWest (safe)</td></tr><tr><td align="left" href="docs/safe.goCurrent.html">goCurrent (safe)</td></tr></table>> fontsize=13];
+    mazeCell -> mazeItem [label = "goItem, item maze (safe)" URL="docs/safe.goItem.html" target="_parent" fontsize=13];
+    mazeCell -> mazeCollection [label = "goCollection, collection (safe)" URL="docs/safe.goCollection.html" target="_parent" fontsize=13];
+    mazeExit -> mazeCell [label = "goStart, start (safe)" URL="docs/safe.goStart.html" target="_parent" fontsize=13];
+    mazeExit -> mazeItem [label = "goItem, item maze (safe)" URL="docs/safe.goItem.html" target="_parent" fontsize=13];
+    mazeExit -> mazeCollection [label = "goCollection, collection (safe)" URL="docs/safe.goCollection.html" target="_parent" fontsize=13];
+
+
+}

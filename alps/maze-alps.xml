@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alps version="1.0">
+    <doc>ALPS Profile for Maze Exploration</doc>
+    <descriptor id="goCollection" href="https://tools.ietf.org/html/rfc6573" type="safe" rt="#mazeCollection"/>
+    <descriptor id="goSouth" href="http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values" type="safe" rt="#mazeCell"/>
+    <descriptor id="goNorth" href="http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values" type="safe" rt="#mazeCell"/>
+    <descriptor id="rel" href="https://schema.org/linkRelationship"/>
+    <descriptor id="href" href="https://schema.org/url"/>
+    <descriptor id="goItem" href="https://tools.ietf.org/html/rfc6573" type="safe" rt="#mazeItem"/>
+    <descriptor id="goExit" href="http://amundsen.com/media-types/maze/format/#link-relations" type="safe" rt="#mazeExit"/>
+    <descriptor id="goEast" href="http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values" type="safe" rt="#mazeCell"/>
+    <descriptor id="mazeItem">
+        <descriptor href="#title"/>
+        <descriptor href="#goCollection"/>
+        <descriptor href="#rel"/>
+        <descriptor href="#goStart"/>
+        <descriptor href="#href"/>
+    </descriptor>
+    <descriptor id="mazeCollection">
+        <descriptor href="#rel"/>
+        <descriptor href="#goItem"/>
+        <descriptor href="#href"/>
+        <descriptor href="#goCollection"/>
+        <descriptor href="#title"/>
+    </descriptor>
+    <descriptor id="goStart" href="http://amundsen.com/media-types/maze/format/#link-relations" type="safe" rt="#mazeCell"/>
+    <descriptor id="goCurrent" href="http://amundsen.com/media-types/maze/format/#link-relations" type="safe" rt="#mazeCell"/>
+    <descriptor id="mazeExit">
+        <descriptor href="#title"/>
+        <descriptor href="#goCollection"/>
+        <descriptor href="#href"/>
+        <descriptor href="#goStart"/>
+        <descriptor href="#goItem"/>
+        <descriptor href="#rel"/>
+    </descriptor>
+    <descriptor id="title" href="https://schema.org/title"/>
+    <descriptor id="goWest" href="http://microformats.org/wiki/existing-rel-values#non_HTML_rel_values" type="safe" rt="#mazeCell"/>
+    <descriptor id="mazeCell">
+        <descriptor href="#title"/>
+        <descriptor href="#goEast"/>
+        <descriptor href="#goCurrent"/>
+        <descriptor href="#href"/>
+        <descriptor href="#goStart"/>
+        <descriptor href="#goWest"/>
+        <descriptor href="#goExit"/>
+        <descriptor href="#goItem"/>
+        <descriptor href="#goCollection"/>
+        <descriptor href="#goSouth"/>
+        <descriptor href="#goNorth"/>
+        <descriptor href="#rel"/>
+    </descriptor>
+</alps>

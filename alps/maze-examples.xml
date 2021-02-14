@@ -1,0 +1,20 @@
+<maze version="1.0">
+  <collection href="http://localhost:1337/">
+    <link href="http://localhost:1337/01-a-beginner-maze" rel="maze" title="Beginner's Maze (5x5)" />
+    <link href="http://localhost:1337/02-for-experts-only" rel="maze" title="For Experts Only" />
+  </collection>
+</maze>
+
+<maze version="1.0">
+  <item href="http://localhost:1337/01-a-beginner-maze" title="Beginner's Maze (5x5)">
+    <link href="http://localhost:1337/01-a-beginner-maze/0" rel="start"/>
+  </item>
+</maze>
+
+<maze version="1.0">
+  <cell href="http://localhost:1337/01-a-beginner-maze/0" rel="current" title="Entrance Hallway">
+    <link href="http://localhost:1337/01-a-beginner-maze/5" rel="east"/>
+    <link href="http://localhost:1337/01-a-beginner-maze" rel="maze" title="Beginner's Maze (5x5)" />
+    <link href="http://localhost:1337" rel="collection"/>
+  </cell>
+</maze>
