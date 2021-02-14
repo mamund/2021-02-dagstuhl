@@ -1,0 +1,82 @@
+{
+  "alps" : {
+    "version" :"1.0",
+    "doc" : {
+      "contentType" : "text/plain", 
+      "value" : "ALPS Profile for AMEE : Automated Maze Environment Exploration"
+    },
+    
+    "descriptor" : 
+    [
+      {"id" : "href", "type" : "semantic"},
+      {"id" : "rel", "type" : "semantic"},
+      {"id" : "title", "type" : "semantic"},
+
+      {"id" : "goCollection", "type" : "safe", "rt" : "#mazeCollection", "rel" : "collection"},
+      {"id" : "goItem", "type" : "safe", "rt" : "#mazeItem", "rel" : "item maze"},
+      {"id" : "goStart", "type" : "safe", "rt" : "#mazeCell", "rel" : "start"},
+      {"id" : "goCurrent", "type" : "safe", "rt" : "#mazeCell", "rel" : "current"},
+      {"id" : "goNorth", "type" : "safe", "rt" : "#mazeCell", "rel" : "north"},
+      {"id" : "goSouth", "type" : "safe", "rt" : "#mazeCell", "rel" : "south"},
+      {"id" : "goEast", "type" : "safe", "rt" : "#mazeCell", "rel" : "east"},
+      {"id" : "goWest", "type" : "safe", "rt" : "#mazeCell", "rel" : "west"},
+      {"id" : "goExit", "type" : "safe", "rt" : "#mazeExit", "rel" : "exit"},
+    
+      {"id" : "mazeCollection", "type" : "semantic", "rel" : "collection",
+        "descriptor" : 
+        [
+          {"href" : "#href"},
+          {"href" : "#title"},
+          {"href" : "#rel"},
+
+          {"href" : "#goItem"},
+          {"href" : "#goCollection"}  
+        ]
+      },
+    
+      {"id" : "mazeItem", "type" : "semantic", "rel" : "item maze",
+        "descriptor" : 
+        [
+          {"href" : "#href"},
+          {"href" : "#title"},
+          {"href" : "#rel"},
+
+          {"href" : "#goStart"},
+          {"href" : "#goCollection"}
+        ]
+      },
+    
+      {"id" : "mazeCell", "type" : "semantic", "rel" : "cell start exit current north south east west", 
+        "descriptor" : 
+        [
+          {"href" : "#href"},
+          {"href" : "#title"},
+          {"href" : "#rel"},
+
+          {"href" : "#goExit"},
+          {"href" : "#goStart"},
+          {"href" : "#goNorth"},
+          {"href" : "#goSouth"},
+          {"href" : "#goEast"},
+          {"href" : "#goWest"},
+          {"href" : "#goCurrent"},
+          {"href" : "#goItem"},
+          {"href" : "#goCollection"}
+        ]
+      },
+      
+      {"id" : "mazeExit", "type" : "semantic", "rel" : "cell exit", 
+        "descriptor" : 
+        [
+          {"href" : "#href"},
+          {"href" : "#title"},
+          {"href" : "#rel"},
+          {"href" : "#goStart"},
+          {"href" : "#goItem"},
+          {"href" : "#goCollection"}
+        ]
+      }
+            
+    ]
+  }
+}
