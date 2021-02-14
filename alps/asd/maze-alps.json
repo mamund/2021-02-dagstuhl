@@ -5,9 +5,9 @@
     
     "descriptor" : 
     [
-      {"id" : "href", "type" : "semantic", "def" : "https://schema.org/url"},
-      {"id" : "rel", "type" : "semantic", "def" : "https://schema.org/linkRelationship"},
-      {"id" : "title", "type" : "semantic", "def" : "https://schema.org/title"},
+      {"id" : "href", "type" : "semantic", "def" : "https://schema.org/url", "tag" : "percept"},
+      {"id" : "rel", "type" : "semantic", "def" : "https://schema.org/linkRelationship", "tag" : "percept"},
+      {"id" : "title", "type" : "semantic", "def" : "https://schema.org/title", "tag" : "percept"},
 
       {"id" : "goCollection", "type" : "safe", "rt" : "#mazeCollection", "rel" : "collection", "def" : "https://tools.ietf.org/html/rfc6573"},
       {"id" : "goItem", "type" : "safe", "rt" : "#mazeItem", "rel" : "item maze", "def" : "https://tools.ietf.org/html/rfc6573"},
