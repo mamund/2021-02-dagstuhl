@@ -103,11 +103,17 @@ function makeRequest(method, path) {
                     console.log(m.moves++ + ': I\'m starting the ' + room + '. My first move is:' + href)
                 }
                 // ok, see if we can find a maze link
-                if(href===undefined) {href = findLink(links, 'maze');}
+                if(href===undefined) {
+                  href = findLink(links, 'maze');
+                }
                 // well, is there a collection link?
-                if(href===undefined) {href = findLink(links, 'collection');}
+                if(href===undefined) {
+                  href = findLink(links, 'collection');
+                }
                 // ok, i give up!
-                if(href===undefined) {console.log(m.quitter);return;}
+                if(href===undefined) {
+                  console.log(m.quitter);return;
+                }
             }
             
             // ok, try to move to new room
@@ -123,8 +129,8 @@ function makeRequest(method, path) {
                     }
                 }
             }
-            //setTimeout(function(){makeRequest('GET',href)}, 1000);
-            makeRequest('GET',href);
+            setTimeout(function(){makeRequest('GET',href)}, 1000);
+            //makeRequest('GET',href);
         });
     });
 
