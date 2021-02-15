@@ -34,7 +34,7 @@ function handler(req, res) {
     var segments, i, x, parts;
 
     // set global var
-    root = 'http://'+req.headers.host;
+    root = 'http://'+req.headers.host+'/';
     
     // simple routing
     parts = [];
@@ -90,7 +90,7 @@ function showCollection(req, res) {
     list = mazes('list');
     if(list!==undefined) {
         for(i=0,x=list.length;i<x;i++) {
-            body += template.titleLink.replace('{l}',root+'/'+list[i].link).replace('{d}','maze').replace('{t}',list[i].title);
+            body += template.titleLink.replace('{l}',root+list[i].link).replace('{d}','maze').replace('{t}',list[i].title);
         }
     }
     
@@ -109,8 +109,8 @@ function showMaze(req, res, maze) {
     if(data!==undefined) {
         body = '';
         body += template.mazeStart;
-        body += template.itemStart.replace('{l}',root+'/'+maze).replace('{t}',data.title);
-        body += template.link.replace('{l}',root+'/'+maze+'/0').replace('{d}','start');
+        body += template.itemStart.replace('{l}',root+maze).replace('{t}',data.title);
+        body += template.link.replace('{l}',root+maze+'/0').replace('{d}','start');
         body += template.itemEnd;
         body += template.mazeEnd;
 
@@ -153,26 +153,26 @@ function showCell(req, res, maze, cell) {
     if(data!==undefined) {
         body = '';
         body += template.mazeStart;
-        body += template.cellStart.replace('{l}',root+'/'+maze+'/'+cell).replace('{t}',data.title);
+        body += template.cellStart.replace('{l}',root+maze+'/'+cell).replace('{t}',data.title);
 
         // add doors
         for(i=0,x=data.doors.length;i<x;i++) {
             if(data.doors[i]===0) {
-                body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i]).replace('{d}',rel[i]);
+                body += template.link.replace('{l}',root+maze+'/'+mov[i]).replace('{d}',rel[i]);
             }
         }
 
         // hack to add up/down for demo
-        // body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i-1]).replace('{d}','up');
-        // body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i-1]).replace('{d}','down');
+        // body += template.link.replace('{l}',root+maze+'/'+mov[i-1]).replace('{d}','up');
+        // body += template.link.replace('{l}',root+maze+'/'+mov[i-1]).replace('{d}','down');
 
         // if there is an exit, add it
         if(z===ex) {
-            body += template.link.replace('{l}',root+'/'+maze+'/999').replace('{d}','exit').replace('{t}',data.title);
+            body += template.link.replace('{l}',root+maze+'/999').replace('{d}','exit').replace('{t}',data.title);
         }
 
         // add link to start of the maze and the entire collection
-        body += template.titleLink.replace('{l}',root+'/'+maze).replace('{d}','maze').replace('{t}',mz.title);
+        body += template.titleLink.replace('{l}',root+maze).replace('{d}','maze').replace('{t}',mz.title);
         body += template.link.replace('{l}',root).replace('{d}', 'collection');
         
         body += template.cellEnd;
