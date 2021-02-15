@@ -6,10 +6,11 @@ var mazes = require('./mazes.js');
 
 var port = (process.env.PORT||1337);
 var root = '';
+var maze_prefix = 'https://github.com/kaefer3000/2021-02-dagstuhl#';
 
 // add support for CORS
 var headers = {
-    'Content-Type' : 'application/xml',
+    'Content-Type' : 'text/turtle',
     'Access-Control-Allow-Origin' : '*',
     'Access-Control-Allow-Methods' : '*',
     'Access-Control-Allow-Headers' : '*'
@@ -17,17 +18,17 @@ var headers = {
 
 // document model for responses
 var template = {};
-template.mazeStart = '<maze version="1.0">';
-template.mazeEnd = '</maze>';
-template.collectionStart = '<collection href="{l}/">';
-template.collectionEnd = '</collection>';
-template.itemStart = '<item href="{l}" title="{t}">';
-template.itemEnd = '</item>';
-template.cellStart = '<cell href="{l}" rel="current" title="{t}">';
-template.cellEnd = '</cell>';
-template.link = '<link href="{l}" rel="{d}"/>';
-template.titleLink = '<link href="{l}" rel="{d}" title="{t}" />';
-template.error = '<error><title>{t}</title></error>';
+template.mazeStart = '<#it> a <'+maze_prefix+'Maze> .';
+template.mazeEnd = '';
+template.collectionStart = '<#it> a <http://www.w3.org/ns/ldp#Collection> .';
+template.collectionEnd = '';
+template.itemStart = '<{l}#it> <http://www.w3.org/2000/01/rdf-schema#label> "{t}".';
+template.itemEnd = '';
+template.cellStart = '<{l}#it> <http://www.w3.org/2000/01/rdf-schema#label> "{t}" .';
+template.cellEnd = '';
+template.link = '<#it> <'+maze_prefix+'{d}> <{l}#it> .';
+template.titleLink = '<#it> <'+maze_prefix+'{d}> <{l}#it> . <{l}#it> <http://www.w3.org/2000/01/rdf-schema#label> "{t}" .';
+template.error = '';
 
 // node.js only recently added replaceAll, so here a workaround for older versions
 if (!(typeof String.prototype.replaceAll === 'function')) {
