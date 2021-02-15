@@ -29,6 +29,14 @@ template.link = '<link href="{l}" rel="{d}"/>';
 template.titleLink = '<link href="{l}" rel="{d}" title="{t}" />';
 template.error = '<error><title>{t}</title></error>';
 
+// node.js only recently added replaceAll, so here a workaround for older versions
+if (!(typeof String.prototype.replaceAll === 'function')) {
+String.prototype.replaceAll = function(s, r) {
+    var thizz = this;
+    return thizz.replace(new RegExp(s, 'g'), r);
+};
+}
+
 // handle request
 function handler(req, res) {
     var segments, i, x, parts;
@@ -85,12 +93,12 @@ function showCollection(req, res) {
     
     body = '';
     body += template.mazeStart;
-    body += template.collectionStart.replace('{l}',root);
+    body += template.collectionStart.replaceAll('{l}',root);
     
     list = mazes('list');
     if(list!==undefined) {
         for(i=0,x=list.length;i<x;i++) {
-            body += template.titleLink.replace('{l}',root+list[i].link).replace('{d}','maze').replace('{t}',list[i].title);
+            body += template.titleLink.replaceAll('{l}',root+list[i].link).replaceAll('{d}','maze').replaceAll('{t}',list[i].title);
         }
     }
     
@@ -109,8 +117,8 @@ function showMaze(req, res, maze) {
     if(data!==undefined) {
         body = '';
         body += template.mazeStart;
-        body += template.itemStart.replace('{l}',root+maze).replace('{t}',data.title);
-        body += template.link.replace('{l}',root+maze+'/0').replace('{d}','start');
+        body += template.itemStart.replaceAll('{l}',root+maze).replaceAll('{t}',data.title);
+        body += template.link.replaceAll('{l}',root+maze+'/0').replaceAll('{d}','start');
         body += template.itemEnd;
         body += template.mazeEnd;
 
@@ -153,12 +161,12 @@ function showCell(req, res, maze, cell) {
     if(data!==undefined) {
         body = '';
         body += template.mazeStart;
-        body += template.cellStart.replace('{l}',root+maze+'/'+cell).replace('{t}',data.title);
+        body += template.cellStart.replaceAll('{l}',root+maze+'/'+cell).replaceAll('{t}',data.title);
 
         // add doors
         for(i=0,x=data.doors.length;i<x;i++) {
             if(data.doors[i]===0) {
-                body += template.link.replace('{l}',root+maze+'/'+mov[i]).replace('{d}',rel[i]);
+                body += template.link.replaceAll('{l}',root+maze+'/'+mov[i]).replaceAll('{d}',rel[i]);
             }
         }
 
@@ -168,12 +176,12 @@ function showCell(req, res, maze, cell) {
 
         // if there is an exit, add it
         if(z===ex) {
-            body += template.link.replace('{l}',root+maze+'/999').replace('{d}','exit').replace('{t}',data.title);
+            body += template.link.replaceAll('{l}',root+maze+'/999').replaceAll('{d}','exit').replaceAll('{t}',data.title);
         }
 
         // add link to start of the maze and the entire collection
-        body += template.titleLink.replace('{l}',root+maze).replace('{d}','maze').replace('{t}',mz.title);
-        body += template.link.replace('{l}',root).replace('{d}', 'collection');
+        body += template.titleLink.replaceAll('{l}',root+maze).replaceAll('{d}','maze').replaceAll('{t}',mz.title);
+        body += template.link.replaceAll('{l}',root).replaceAll('{d}', 'collection');
         
         body += template.cellEnd;
         body += template.mazeEnd;
@@ -188,7 +196,7 @@ function showCell(req, res, maze, cell) {
 // unexpected request
 function showError(req, res, title, code) {
     var body = template.mazeStart
-        + template.error.replace('{t}',title)
+        + template.error.replaceAll('{t}',title)
         + template.mazeEnd;
     showResponse(req, res, body, code);
 }
