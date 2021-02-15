@@ -123,6 +123,8 @@ function showMaze(req, res, maze) {
         body += template.itemEnd;
         body += template.mazeEnd;
 
+	body = body.replaceAll('<'+maze_prefix+'start>','<http://www.w3.org/1999/xhtml/vocab#start>');
+
         showResponse(req, res, body, 200);
     }
     else {
