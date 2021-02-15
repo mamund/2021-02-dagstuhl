@@ -101,6 +101,8 @@ function showCollection(req, res) {
             body += template.titleLink.replaceAll('{l}',root+list[i].link).replaceAll('{d}','maze').replaceAll('{t}',list[i].title);
         }
     }
+
+    body = body.replaceAll('<'+maze_prefix+'maze>','<http://www.w3.org/ns/ldp#contains>');
     
     body += template.collectionEnd;
 
