@@ -93,7 +93,6 @@ function showCollection(req, res) {
     var body, list, i, x;
     
     body = '';
-    body += template.mazeStart;
     body += template.collectionStart.replaceAll('{l}',root);
     
     list = mazes('list');
@@ -104,7 +103,6 @@ function showCollection(req, res) {
     }
     
     body += template.collectionEnd;
-    body += template.mazeEnd;
 
     showResponse(req, res, body, 200);
 }
@@ -163,7 +161,6 @@ function showCell(req, res, maze, cell) {
     // if we have details, craft representation
     if(data!==undefined) {
         body = '';
-        body += template.mazeStart;
         body += template.cellStart.replaceAll('{l}',root+maze+'/'+cell).replaceAll('{t}',data.title);
 
         // add doors
@@ -187,7 +184,6 @@ function showCell(req, res, maze, cell) {
         body += template.link.replaceAll('{l}',root).replaceAll('{d}', 'collection');
         
         body += template.cellEnd;
-        body += template.mazeEnd;
     
         showResponse(req, res, body, 200);
     }
@@ -198,9 +194,9 @@ function showCell(req, res, maze, cell) {
 
 // unexpected request
 function showError(req, res, title, code) {
-    var body = template.mazeStart
+    var body = ''
         + template.error.replaceAll('{t}',title)
-        + template.mazeEnd;
+        + '';
     showResponse(req, res, body, code);
 }
 
