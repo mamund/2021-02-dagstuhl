@@ -26,21 +26,22 @@
     <div about="vocab#maze">
       A <a href="vocab#Maze" typeof="rdfs:Class" property="schema:rangeIncludes"><em property="rdfs:label">Maze</em></a>
       is something to get lost in. A Maze is comprised of <a href="vocab#Cell" property="schema:domainIncludes" typeof="rdfs:Class">
-      <em property="rdfs:label">Cell</em></a>s. It may be that you can leave a cell through a door in different <a href="vocab#Direction" property="rdfs:label">Direction</a>s:
+      <em property="rdfs:label">Cell</em></a>s.
     </div>
 
+    <div about="vocab#Direction" property="rdfs:subClassOf" resource="rdf:Property">It may be that you can leave a cell through a door in different <a href="vocab#Direction" property="rdfs:label">Direction</a>s:</div>
     <ul prefix="vocab: vocab#"> <!-- otherwise the relative URI in typeof does not work -->
       <li>
-        <a href="vocab#north" typeof="rdf:Property"><em property="rdfs:label">north</em></a>
+        <a href="vocab#north" typeof="rdf:Property vocab:Direction"><em property="rdfs:label">north</em></a>
       </li>
       <li>
-        <a href="vocab#east" typeof="rdf:Property"><em property="rdfs:label">east</em></a>
+        <a href="vocab#east" typeof="rdf:Property vocab:Direction"><em property="rdfs:label">east</em></a>
       </li>
       <li>
-        <a href="vocab#south" typeof="rdf:Property"><em property="rdfs:label">south</em></a>
+        <a href="vocab#south" typeof="rdf:Property vocab:Direction"><em property="rdfs:label">south</em></a>
       </li>
       <li>
-        <a href="vocab#west" typeof="rdf:Property"><em property="rdfs:label">west</em></a>
+        <a href="vocab#west" typeof="rdf:Property vocab:Direction"><em property="rdfs:label">west</em></a>
       </li>
     </ul>
 
