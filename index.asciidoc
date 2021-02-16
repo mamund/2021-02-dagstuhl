@@ -6,8 +6,19 @@
 
 = From Steve Austin to Peter Norvig : Engineering AMEE, the Simple Autonomous Agent
 :author: Mike Amundsen
-:email: mca@mamund.com
-:toc:
+:email: mca@amundsen.com
+
+image:2021-02-dagstuhl-engineering-amee-title.png["Title Slide", height=150, border=1, link="2021-02-dagstuhl-engineering-amee.pdf"]
+
+== Overview
+Status:: _Delivered 2021-02-15 for https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=21072[Autonomous Agents on the Web]_
+Home:: link:index.html[HTML]
+Slides:: link:2021-02-dagstuhl-engineering-amee.pdf[PDF]
+Talk Outline:: link:2021-02-dagstuhl-engineering-amee.html[HTML]
+Code:: link:https://github.com/mamund/2021-02-dagstuhl[Github]
+Video:: _NA_
+Audio:: _NA_
+Transcript:: _NA_
 
 [abstract]
 == Abstract
@@ -17,140 +28,20 @@ _"We can build it. We have the technology." -- Oscar Goldman from The Six Millio
 
 Creating and maintaining a simple autonomous agent involves building an application that can successfully deal with Russell & Norvig's (1995) four elements of intelligent agents: _Precepts_, _Actions_, _Goals_, and _Environment_. Taking a lead from the 1970s US television series "Six Million Dollar Man" we'll explore the details of designing and building *AMEE* the _Agent for Maze Environment Exploration_. Along the way we'll see how you can use existing web technologies such as hypermedia, semantic profiles, and a compact algorithm to build a small Javascript-based autonomous agent that can successfully navigate random two-dimensional mazes of arbitrary size. Finally, we'll contemplate how we can apply what we learned in this example to the larger World Wide Web to create more useful and more sophisticated autonomous agents using existing tools and technologies.
 
-////
-:numbered:
-== Preamble
+== Mike Amundsen
+An internationally known author and speaker, Mike Amundsen consults with organizations around the world on network architecture, Web development, and the intersection of technology & society. He works with companies large and small to help them capitalize on the opportunities provided by APIs, Microservices, and Digital Transformation. 
 
- * Harve Bennett : "Steve Austin, astronaut. A man barely alive." Oscar Goldman : "We can rebuild him. We have the technology. We can make him better than he was. Better, stronger, faster."
- * https://www.youtube.com/watch?v=93IDp6wkZZE
- 
-== 
-Turing's Imitation Game
- * https://en.wikipedia.org/wiki/Turing_test
- * "Are there imaginable digital computers which would do well in the imitation game?"
- * https://academic.oup.com/mind/article/LIX/236/433/986238
+Amundsen has authored numerous books and papers. His most recent book is "Design and Build Great Web APIs" with Pragmatic Programmers. He contributed to the O'Reilly book, "Continuous API Management" (2018). Amundsen's "RESTful Web Clients" was published by O'Reilly in February 2017 and he co-authored "Microservice Architecture" (June 2016).  
 
-=== An Intelligent Agent
-TK
+ * Twitter: @mamund
+ * Voice: +1.859.757.1449 
+ * Email: mca@amundsen.com 
+ * Blog: http://amundsen.com/blog/
+ * Github: http://github.com/mamund
+ * Facebook: http://fb.me/mcaTravels
+ * YouTube: http://youtube.com/mamund/
+ * LinkedIn: http://linkedin.com/in/mamund
+ * Presentations: http://amundsen.com/talks/
+ * Amazon Page: http://amazon.com/author/mamund
 
- * "an intelligent agent (IA) refers to an autonomous entity which acts, directing its activity towards achieving goals (i.e. it is an agent), upon an environment using observation through sensors and consequent actuators"
- * https://en.wikipedia.org/wiki/Intelligent_agent
-
-software entities that carry out some set of operations on behalf of a user or another program with some degree of independence or autonomy, and in so doing, employ some knowledge or representation of the user's goals or desires.
-=== P.A.G.E
-TK
-
-Precepts::
-TK
-
-Actions:
-TK
-
-Goals::
-TK
-
-Environment::
-TK
-
-== Hierarchy of Agents
-TK
-
- * https://en.wikipedia.org/wiki/Intelligent_agent#Classes
- 
-Reflex::
-TK
-
-Model-based::
-TK
-
-Goal-based::
-TK
-
-Utility::
-TK
-
-Learning::
-TK
-
-== An Agent for MazeXML Enviroment Exploration (AMEE)
-TK
-
-=== Understanding the Maze's PAGE
-TK
-
- * Maze is a Habitat
-
-Precepts::
-TK
-
- * ontology
-
-Actions::
-TK
-
- * LINKS/FORMS
- 
-Goals::
-TK
-
- * exit!
- 
-Environment::
-
- * protocol, message, ontology
- 
-=== Maze Traversal Algorithm
-TK
-
-=== Building AMEE
-TK
-
-==== Describing AMEE
-
- * ALPS for AMEE
-
-==== Coding AMEE
-
- * Javascript for AMEE
-
-==== Running AMEE
-
- * Exploring Mazes with AMEE
-
-== Future Work
-TK
-=== Improving AMY
-TK
-
- * add more to the environment (rewards, hazards)
- * add utility (scoring of actions)
- * add learning (memory of past runs and optimization)
-
-=== Other Environments
-TK
-
- * navigate (search)
- * choose (search, select)
- * shopping (search, select, pay)
- * multiple bots for a single "job"
- 
-:numbered!:
-
-== Additional References
-
- * http://amundsen.com/media-types/maze/
- * http://amundsen.com/examples/mazes/2d/
- * http://amundsen.com/examples/misc/maze-client.html
- * https://github.com/mamund/rwa
- * http://norvig.com/spell-correct.html
- * https://zoo.cs.yale.edu/classes/cs470/materials/aima2010.pdf
- * https://en.wikipedia.org/wiki/Intelligent_agent
- * https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.89.5278&rep=rep1&type=pdf
- * https://www.cs.bham.ac.uk/~jxb/IAI/w4.pdf
- * http://ccrg.cs.memphis.edu/assets/papers/Is%20it%20an%20Agent,%20or%20just%20a%20Program%20-%20A%20Taxonomy.htm
- * https://www.imdb.com/title/tt0071054/characters/nm0027323
- * https://www.math.pku.edu.cn/teachers/linzq/teaching/stm/pdf/2-ia.pdf
- * https://en.wikipedia.org/wiki/Intelligent_agent
- 
-////
 

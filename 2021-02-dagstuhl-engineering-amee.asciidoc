@@ -1,0 +1,87 @@
+= From Steve Austin to Peter Norvig : Engineering AMEE, the Simple Autonomous Agent
+:author: Mike Amundsen
+:email: mamund@yahoo.com
+:toc:
+
+== Presentation Outline : Overview
+ * Steve Austin & Peter Norvig
+ * Turing's Imitation Game
+ * About Agents
+ * Engineering AMEE
+ * Summary
+
+== Steve Austin & Peter Norvig
+ * *Steve Austin*
+ ** "We can rebuild him. We have the technology. We can make him better than he was. Better...stronger...faster." -- The Six Million Dollar Man, 1973
+ ** The technology of the day
+ ** The power of a machine
+ ** The brain of a human
+
+ * *Peter Norvig*
+ ** "More data beats clever algorithms, but better data beats more data." -- Peter Norvig
+ ** "How to Write a Spell Corrector" -- Peter Norvig (2007) : http://norvig.com/spell-correct.html
+ ** "Artificial Intelligence : A Modern Approach" -- Russell & Norvig (1994)
+
+== Turing's Imitation Game
+ * *Alan Turing*
+ ** "Are there imaginable digital computers which would do well in the imitation game?" -- Alan Turing, 1950
+
+== About Agents
+ * *Intelligent Agent*
+ ** "Anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actuators" -- Russell & Norvig,  "Artificial Intelligence: A Modern Approach" (1994)
+ * *Autonomous Agents*
+ ** "Software entities that carry out operations on behalf of a user with independence and employ  knowledge of the user's goals." -- a multiply cited statement in an IBM white paper no longer accessible
+ * *PAGE*
+ ** Percepts, Actions, Goals, Environment
+ ** Percepts : _Something that is perceived._
+ ** Actions : _Something that is done; an act._
+ ** Goals : _A desired result._
+ ** Environment : _Conditions under which you operate._
+ * *Classes of Agents*
+ ** Simple reflex agent : door robot
+ ** Model-based agent : vacuum robot
+ ** Goal-based agent : find this vacuum robot for me online
+ ** Utility agent : buy this vacuum robot at the 'best price'
+ ** Learning agent : remember where you get the 'best price' on vacuum robots
+ * *Intelligent Autonomous Agents*
+ ** Imitating users
+ ** Carrying out tasks
+ ** Using percepts, actions, goals, and environment
+ ** Via reflex, model, goal, utility, learning
+
+== Engineering AMEE
+AMEE : The Autonomous Maze Environment Explorer
+
+ * *AMEE : What is it?*
+ ** AMEE can successfully navigate any 2-dimensional maze of arbitrary size.
+ ** Agent Class: Goal-based
+ ** Percepts: Various kinds of doors
+ ** Actions: Affordances to view, turn, and move
+ ** Goals: Escape!
+ ** Environment: XML messages via HTTP protocol
+ * *AMEE : How do we build it?* : https://github.com/mamund/2021-02-dagstuhl/blob/master/alps/asd/maze-alps.svg
+ * *AMEE's algorithm (Model)* : https://github.com/mamund/2021-02-dagstuhl/blob/master/images/2021-02-13-maze-bot-model.png
+ * *Coding AMEE (Sensors & Actuators)* : https://github.com/mamund/rwa/blob/master/Maze/the-bot/the-bot.js
+
+== Summary 
+ * *The Future of AMEE*
+ ** AMEE's Environment :  Include rewards (added points) and dangers (lost points)
+ ** Agent Class : Level up to utility[L4] (scoring) and learning[L5] (improving score)
+ * *Imitating AMEE in the real world*
+ ** Navigation
+ ** Selection
+ ** Acquiring
+ ** Remembering
+ ** Learning
+
+== One more thing...
+ * *Rene Descartes*
+ ** "It is impossible for a machine to have enough different organs to make it act in all the contingencies of life in the way in which our reason makes us act." -- Rene Descartes, Discourse on Method (1637)
+ * *We need lots of AMEEs!*
+
+== Thank you!
+ * "We can built it, we have the technology…"
+ * "Imaginable digital computers…"
+ * PAGE & Agent Classes
+ * Engineering AMEE
+ * "Enough different AMEEs …"

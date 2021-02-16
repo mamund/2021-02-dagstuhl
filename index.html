@@ -728,7 +728,7 @@ install: function(toclevels) {
 }
 
 }
-asciidoc.install(2);
+asciidoc.install();
 /*]]>*/
 </script>
 </head>
@@ -736,13 +736,89 @@ asciidoc.install(2);
 <div id="header">
 <h1>From Steve Austin to Peter Norvig : Engineering AMEE, the Simple Autonomous Agent</h1>
 <span id="author">Mike Amundsen</span><br />
-<span id="email"><code>&lt;<a href="mailto:mca@mamund.com">mca@mamund.com</a>&gt;</code></span><br />
-<div id="toc">
-  <div id="toctitle">Table of Contents</div>
-  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
-</div>
+<span id="email"><code>&lt;<a href="mailto:mca@amundsen.com">mca@amundsen.com</a>&gt;</code></span><br />
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph"><p><span class="image">
+<a class="image" href="2021-02-dagstuhl-engineering-amee.pdf">
+<img src="2021-02-dagstuhl-engineering-amee-title.png" alt="Title Slide" height="150" />
+</a>
+</span></p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="dlist"><dl>
+<dt class="hdlist1">
+Status
+</dt>
+<dd>
+<p>
+<em>Delivered 2021-02-15 for <a href="https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=21072">Autonomous Agents on the Web</a></em>
+</p>
+</dd>
+<dt class="hdlist1">
+Home
+</dt>
+<dd>
+<p>
+<a href="index.html">HTML</a>
+</p>
+</dd>
+<dt class="hdlist1">
+Slides
+</dt>
+<dd>
+<p>
+<a href="2021-02-dagstuhl-engineering-amee.pdf">PDF</a>
+</p>
+</dd>
+<dt class="hdlist1">
+Talk Outline
+</dt>
+<dd>
+<p>
+<a href="2021-02-dagstuhl-engineering-amee.html">HTML</a>
+</p>
+</dd>
+<dt class="hdlist1">
+Code
+</dt>
+<dd>
+<p>
+<a href="https://github.com/mamund/2021-02-dagstuhl">Github</a>
+</p>
+</dd>
+<dt class="hdlist1">
+Video
+</dt>
+<dd>
+<p>
+<em>NA</em>
+</p>
+</dd>
+<dt class="hdlist1">
+Audio
+</dt>
+<dd>
+<p>
+<em>NA</em>
+</p>
+</dd>
+<dt class="hdlist1">
+Transcript
+</dt>
+<dd>
+<p>
+<em>NA</em>
+</p>
+</dd>
+</dl></div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_abstract">Abstract</h2>
 <div class="sectionbody">
@@ -751,12 +827,71 @@ asciidoc.install(2);
 <div class="paragraph"><p>Creating and maintaining a simple autonomous agent involves building an application that can successfully deal with Russell &amp; Norvig&#8217;s (1995) four elements of intelligent agents: <em>Precepts</em>, <em>Actions</em>, <em>Goals</em>, and <em>Environment</em>. Taking a lead from the 1970s US television series "Six Million Dollar Man" we&#8217;ll explore the details of designing and building <strong>AMEE</strong> the <em>Agent for Maze Environment Exploration</em>. Along the way we&#8217;ll see how you can use existing web technologies such as hypermedia, semantic profiles, and a compact algorithm to build a small Javascript-based autonomous agent that can successfully navigate random two-dimensional mazes of arbitrary size. Finally, we&#8217;ll contemplate how we can apply what we learned in this example to the larger World Wide Web to create more useful and more sophisticated autonomous agents using existing tools and technologies.</p></div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_mike_amundsen">Mike Amundsen</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>An internationally known author and speaker, Mike Amundsen consults with organizations around the world on network architecture, Web development, and the intersection of technology &amp; society. He works with companies large and small to help them capitalize on the opportunities provided by APIs, Microservices, and Digital Transformation.</p></div>
+<div class="paragraph"><p>Amundsen has authored numerous books and papers. His most recent book is "Design and Build Great Web APIs" with Pragmatic Programmers. He contributed to the O&#8217;Reilly book, "Continuous API Management" (2018). Amundsen&#8217;s "RESTful Web Clients" was published by O&#8217;Reilly in February 2017 and he co-authored "Microservice Architecture" (June 2016).</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Twitter: @mamund
+</p>
+</li>
+<li>
+<p>
+Voice: +1.859.757.1449
+</p>
+</li>
+<li>
+<p>
+Email: <a href="mailto:mca@amundsen.com">mca@amundsen.com</a>
+</p>
+</li>
+<li>
+<p>
+Blog: <a href="http://amundsen.com/blog/">http://amundsen.com/blog/</a>
+</p>
+</li>
+<li>
+<p>
+Github: <a href="http://github.com/mamund">http://github.com/mamund</a>
+</p>
+</li>
+<li>
+<p>
+Facebook: <a href="http://fb.me/mcaTravels">http://fb.me/mcaTravels</a>
+</p>
+</li>
+<li>
+<p>
+YouTube: <a href="http://youtube.com/mamund/">http://youtube.com/mamund/</a>
+</p>
+</li>
+<li>
+<p>
+LinkedIn: <a href="http://linkedin.com/in/mamund">http://linkedin.com/in/mamund</a>
+</p>
+</li>
+<li>
+<p>
+Presentations: <a href="http://amundsen.com/talks/">http://amundsen.com/talks/</a>
+</p>
+</li>
+<li>
+<p>
+Amazon Page: <a href="http://amazon.com/author/mamund">http://amazon.com/author/mamund</a>
+</p>
+</li>
+</ul></div>
+</div>
+</div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2021-02-12 11:45:49 EST
+ 2021-02-15 17:45:58 EST
 </div>
 </div>
 </body>
