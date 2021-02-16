@@ -2,7 +2,7 @@
 
 _Compliant with Maze-XML media type: http://amundsen.com/media-types/maze/_
 
-There is an XML version and an RDF (turtle) versoin of the server
+There is an XML version and an RDF (turtle) version of the server
 
 ## XML Version
 ```sh
