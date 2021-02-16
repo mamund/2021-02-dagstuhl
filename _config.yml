@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+
+defaults:
+ - scope:
+    path: "vocab.html"
