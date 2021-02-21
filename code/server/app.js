@@ -8,6 +8,7 @@ var port = (process.env.PORT||1337);
 var root = '';
 var maze_prefix = 'https://kaefer3000.github.com/2021-02-dagstuhl/vocab#';
 
+var counter = 0;
 // add support for CORS
 var headers = {
     'Content-Type' : 'text/turtle',
@@ -44,7 +45,10 @@ function handler(req, res) {
 
     // set global var
     root = 'http://'+req.headers.host+'/';
-    
+
+    // add tracking echo
+    console.log("%d - %s",counter++, req.url)
+
     // simple routing
     parts = [];
     segments = req.url.split('/');

@@ -160,8 +160,13 @@ function showCell(req, res, maze, cell) {
             if(data.doors[i]===0) {
                 body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i]).replace('{d}',rel[i]);
             }
+            /*
+            if(data.green && data.green[i]===1) {
+                body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i]).replace('{d}',"green");
+           }
+           */            
         }
-
+        
         // hack to add up/down for demo
         // body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i-1]).replace('{d}','up');
         // body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i-1]).replace('{d}','down');
