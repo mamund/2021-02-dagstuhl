@@ -29,6 +29,10 @@ template.link = '<link href="{l}" rel="{d}"/>';
 template.titleLink = '<link href="{l}" rel="{d}" title="{t}" />';
 template.error = '<error><title>{t}</title></error>';
 
+// green signifier represents a shortcut to exit
+var m = {};
+m.signifier = "green"
+
 // handle request
 function handler(req, res) {
     var segments, i, x, parts;
@@ -155,22 +159,18 @@ function showCell(req, res, maze, cell) {
         body += template.mazeStart;
         body += template.cellStart.replace('{l}',root+'/'+maze+'/'+cell).replace('{t}',data.title);
 
-        // add doors
+        // add doors & and shortcut signifier
         for(i=0,x=data.doors.length;i<x;i++) {
+            // door
             if(data.doors[i]===0) {
                 body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i]).replace('{d}',rel[i]);
             }
-            /*
+            // signifier
             if(data.green && data.green[i]===1) {
-                body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i]).replace('{d}',"green");
+                body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i]).replace('{d}',m.signifier);
            }
-           */            
         }
         
-        // hack to add up/down for demo
-        // body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i-1]).replace('{d}','up');
-        // body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i-1]).replace('{d}','down');
-
         // if there is an exit, add it
         if(z===ex) {
             body += template.link.replace('{l}',root+'/'+maze+'/999').replace('{d}','exit').replace('{t}',data.title);

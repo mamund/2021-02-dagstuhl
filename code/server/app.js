@@ -1,5 +1,7 @@
-/* RESTful Web APIs - 2013 */
-/* Maze+XML server implementation */
+/* RESTful Web APIs - 2013 (original) */
+/* Autonomous Agents on the Web : Dagstuhl 2021-02 (fork)
+/* Maze RDF server implementation */
+/* Added "green" shortcut signifier : 20201-02 (mamund) */
 
 var http = require('http');
 var mazes = require('./mazes.js');
@@ -30,6 +32,9 @@ template.cellEnd = '';
 template.link = '<#it> <'+maze_prefix+'{d}> <{l}#it> .';
 template.titleLink = '<#it> <'+maze_prefix+'{d}> <{l}#it> . <{l}#it> <http://www.w3.org/2000/01/rdf-schema#label> "{t}" .';
 template.error = '';
+
+var m = {};
+m.signifier = "green"; // shortcut signifier
 
 // node.js only recently added replaceAll, so here a workaround for older versions
 if (!(typeof String.prototype.replaceAll === 'function')) {
@@ -169,16 +174,15 @@ function showCell(req, res, maze, cell) {
         body = '';
         body += template.cellStart.replaceAll('{l}',root+maze+'/'+cell).replaceAll('{t}',data.title);
 
-        // add doors
+        // add doors & signifier
         for(i=0,x=data.doors.length;i<x;i++) {
             if(data.doors[i]===0) {
                 body += template.link.replaceAll('{l}',root+maze+'/'+mov[i]).replaceAll('{d}',rel[i]);
             }
+            if(data.green && data.green[i]===1) {
+                body += template.link.replaceAll('{l}',root+maze+'/'+mov[i]).replaceAll('{d}',m.signifier);
+            }
         }
-
-        // hack to add up/down for demo
-        // body += template.link.replace('{l}',root+maze+'/'+mov[i-1]).replace('{d}','up');
-        // body += template.link.replace('{l}',root+maze+'/'+mov[i-1]).replace('{d}','down');
 
         // if there is an exit, add it
         if(z===ex) {
