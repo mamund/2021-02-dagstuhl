@@ -19,7 +19,7 @@
       "cell14":{"title":"Sitting Room", "doors":[0,1,1,0]},
       "cell15":{"title":"Standing Room", "doors":[1,1,1,0]},
       "cell16":{"title":"Hobby Room", "doors":[1,0,1,0], "green":[0,0,1,0]},
-      "cell17":{"title":"Observatory", "doors":[1,1,0,0]}, "green":[0,0,0,1],
+      "cell17":{"title":"Observatory", "doors":[1,1,0,0], "green":[0,0,0,1]},
       "cell18":{"title":"Hot House", "doors":[0,1,0,1], "green":[0,0,0,1]},
       "cell19":{"title":"Guest Room", "doors":[0,0,1,0], "green":[0,0,1,0]},
       "cell20":{"title":"Servant's Quarters", "doors":[1,0,0,1]},
